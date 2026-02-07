@@ -1,0 +1,23 @@
+---
+title: LLM Metascore
+summary: Aggregated rankings of top LLM creators from multiple live sources with caching and resilience.
+featured: true
+liveUrl: https://llm-metascore.web.app/
+repoUrl: https://github.com/robertdamiano/llm-metascore
+---
+
+## Overview
+
+A Next.js web app that fetches and aggregates live rankings/benchmarks across multiple sources (HTML + CSV), producing an overall metascore with clear source health status.
+
+## Technical highlights
+
+- Multi-source ingestion with retry/backoff and graceful degradation
+- Firestore caching with scheduled refreshes
+- Explicit aggregation rules (dense ranks, coverage filtering, missing-in-source penalty)
+- Admin override panel for manual adjustments
+
+## Hard parts
+
+The hardest part was robustly parsing real-world web pages across sources without a headless browser, while still keeping the system resilient when individual sources fail or change structure.
+
