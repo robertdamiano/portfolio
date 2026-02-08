@@ -1,6 +1,6 @@
 # Portfolio
 
-Personal portfolio site for `robertdamiano.dev`.
+Personal portfolio site at `robertdamiano-dev.web.app`.
 
 ## Tech
 
@@ -87,6 +87,6 @@ Place images in `public/images/` and reference them in MDX as `![alt text](/imag
 
 Run `npm run format` to auto-format all files with Prettier, or `npm run format:check` to verify formatting without writing changes.
 
-## Custom domain
+## Custom domain (optional)
 
-After the first deploy, add `robertdamiano.dev` as a custom domain in Firebase Hosting and follow the DNS instructions.
+To use a custom domain, add it in Firebase Hosting and follow the DNS instructions.
