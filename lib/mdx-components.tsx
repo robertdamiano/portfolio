@@ -26,15 +26,19 @@ function SmartLink({ href, children, ...props }: AnchorProps) {
 function MdxImage({ src, alt }: ComponentProps<"img">) {
   if (!src || typeof src !== "string") return null;
 
+  const isExternal = src.startsWith("http");
+
   return (
-    <Image
-      src={src}
-      alt={alt ?? ""}
-      width={0}
-      height={0}
-      sizes="(max-width: 768px) 100vw, 768px"
-      className="h-auto w-full rounded-lg"
-    />
+    <span className="relative block aspect-video w-full overflow-hidden rounded-lg">
+      <Image
+        src={src}
+        alt={alt ?? ""}
+        fill
+        sizes="(max-width: 768px) 100vw, 768px"
+        className="object-contain"
+        unoptimized={isExternal}
+      />
+    </span>
   );
 }
 
