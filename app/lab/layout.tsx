@@ -14,4 +14,3 @@ export default function LabLayout({ children }: { children: React.ReactNode }) {
     </div>
   );
 }
-

@@ -107,4 +107,3 @@ export async function renderMdxItem(name: CollectionName, slug: string) {
     return null;
   }
 }
-

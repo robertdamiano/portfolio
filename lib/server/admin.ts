@@ -16,4 +16,3 @@ export function requireAdminToken(req: NextRequest): NextResponse | null {
 
   return null;
 }
-

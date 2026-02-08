@@ -8,4 +8,3 @@ export async function GET(req: NextRequest) {
 
   return NextResponse.json({ ok: true, now: new Date().toISOString() });
 }
-

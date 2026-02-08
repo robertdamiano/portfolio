@@ -20,7 +20,10 @@ export default async function BlogPage() {
         {posts.map((post) => (
           <li key={post.slug} className="rounded-lg border border-border bg-card p-4">
             <div className="flex flex-wrap items-baseline justify-between gap-2">
-              <Link href={`/blog/${post.slug}`} className="font-mono font-semibold text-accent underline underline-offset-4">
+              <Link
+                href={`/blog/${post.slug}`}
+                className="font-mono font-semibold text-accent underline underline-offset-4"
+              >
                 {post.title}
               </Link>
               {post.date ? <span className="text-xs text-muted">{post.date}</span> : null}
@@ -32,4 +35,3 @@ export default async function BlogPage() {
     </div>
   );
 }
-

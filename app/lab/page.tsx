@@ -15,7 +15,10 @@ export default async function LabPage() {
       <ul className="space-y-3">
         {items.map((item) => (
           <li key={item.slug} className="rounded-lg border border-border bg-card p-4">
-            <Link href={`/lab/${item.slug}`} className="font-mono font-semibold text-accent underline underline-offset-4">
+            <Link
+              href={`/lab/${item.slug}`}
+              className="font-mono font-semibold text-accent underline underline-offset-4"
+            >
               {item.title}
             </Link>
             {item.summary ? <p className="mt-2 text-sm text-muted">{item.summary}</p> : null}
@@ -25,4 +28,3 @@ export default async function LabPage() {
     </div>
   );
 }
-

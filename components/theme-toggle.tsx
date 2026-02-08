@@ -15,6 +15,7 @@ export function ThemeToggle() {
     <label className="flex items-center gap-2">
       <span className="sr-only">Theme</span>
       <select
+        aria-label="Select theme"
         className="h-9 rounded-md border border-border bg-card px-2 text-xs text-foreground"
         value={theme ?? "system"}
         onChange={(e) => setTheme(e.target.value)}
@@ -26,4 +27,3 @@ export function ThemeToggle() {
     </label>
   );
 }
-

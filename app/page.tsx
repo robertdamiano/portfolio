@@ -12,21 +12,17 @@ export default async function HomePage() {
       <section className="space-y-5">
         <div className="space-y-3">
           <h1 className="font-mono text-4xl font-semibold tracking-tight">Senior Platform Engineer</h1>
-          <p className="text-balance text-xl text-muted">Reliable infrastructure, fast delivery, clear observability.</p>
+          <p className="text-balance text-xl text-muted">
+            Reliable infrastructure, fast delivery, clear observability.
+          </p>
           <p className="text-balance font-mono text-sm text-muted">IaC, pipelines, and observability—AWS-first.</p>
         </div>
 
         <div className="flex flex-wrap gap-3">
-          <Link
-            href="/projects"
-            className="rounded-md bg-foreground px-4 py-2 text-sm font-medium text-background"
-          >
+          <Link href="/projects" className="rounded-md bg-foreground px-4 py-2 text-sm font-medium text-background">
             See projects
           </Link>
-          <Link
-            href="/lab"
-            className="rounded-md border border-border bg-card px-4 py-2 text-sm font-medium"
-          >
+          <Link href="/lab" className="rounded-md border border-border bg-card px-4 py-2 text-sm font-medium">
             Lab (experimental)
           </Link>
         </div>
@@ -37,8 +33,8 @@ export default async function HomePage() {
         <ul className="space-y-2 text-sm text-muted">
           <li>Senior Platform Engineer — building AWS-first IaC and Kubernetes platforms for product teams.</li>
           <li>
-            Reduced environment provisioning from days (ticket-to-ready) to ~15 minutes by delivering self-serve ephemeral
-            environments developers can create/destroy on demand.
+            Reduced environment provisioning from days (ticket-to-ready) to ~15 minutes by delivering self-serve
+            ephemeral environments developers can create/destroy on demand.
           </li>
           <li>
             Lowered and stabilized AWS spend through continuous rightsizing, autoscaling tuning, and a reservations
@@ -82,4 +78,3 @@ export default async function HomePage() {
     </div>
   );
 }
-
