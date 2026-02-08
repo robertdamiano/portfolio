@@ -34,12 +34,22 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         {item.frontmatter.summary ? <p className="text-sm text-muted">{item.frontmatter.summary}</p> : null}
         <div className="flex flex-wrap gap-3 text-sm">
           {item.frontmatter.liveUrl ? (
-            <a className="text-accent underline underline-offset-4" href={item.frontmatter.liveUrl} target="_blank" rel="noreferrer">
+            <a
+              className="text-accent underline underline-offset-4"
+              href={item.frontmatter.liveUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
               Live
             </a>
           ) : null}
           {item.frontmatter.repoUrl ? (
-            <a className="text-accent underline underline-offset-4" href={item.frontmatter.repoUrl} target="_blank" rel="noreferrer">
+            <a
+              className="text-accent underline underline-offset-4"
+              href={item.frontmatter.repoUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
               Source
             </a>
           ) : null}

@@ -1,6 +1,6 @@
 # Portfolio
 
-Personal portfolio site for `robertdamiano.dev`.
+Personal portfolio site at `robertdamiano-dev.web.app`.
 
 ## Tech
 
@@ -50,6 +50,43 @@ npx firebase login --reauth
 npx firebase deploy --only hosting --project robertdamiano-dev
 ```
 
-## Custom domain
+## Adding content
 
-After the first deploy, add `robertdamiano.dev` as a custom domain in Firebase Hosting and follow the DNS instructions.
+Content lives in the `content/` directory as MDX files, organized by collection:
+
+```
+content/
+  blog/          → /blog/:slug
+  projects/      → /projects/:slug
+  lab/           → /lab/:slug
+```
+
+### Create a new post
+
+1. Add a `.mdx` file in the appropriate collection folder. The filename becomes the URL slug (e.g. `content/blog/my-post.mdx` → `/blog/my-post`).
+2. Include frontmatter at the top of the file:
+
+```mdx
+---
+title: My Post Title # required
+summary: A short description # optional, shown in lists and meta tags
+date: "2026-01-15" # optional, used for sorting blog posts
+featured: true # optional, pins projects to the homepage
+liveUrl: https://example.com # optional, "Live" link on project pages
+repoUrl: https://github.com/… # optional, "Source" link on project pages
+---
+
+Your markdown/MDX content here.
+```
+
+### Images
+
+Place images in `public/images/` and reference them in MDX as `![alt text](/images/filename.png)`. Images are automatically optimized via `next/image`.
+
+### Formatting
+
+Run `npm run format` to auto-format all files with Prettier, or `npm run format:check` to verify formatting without writing changes.
+
+## Custom domain (optional)
+
+To use a custom domain, add it in Firebase Hosting and follow the DNS instructions.

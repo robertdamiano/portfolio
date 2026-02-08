@@ -24,12 +24,22 @@ export function ProjectCard({ project }: { project: CollectionListItem }) {
 
       <div className="mt-4 flex flex-wrap gap-3 text-sm">
         {project.liveUrl ? (
-          <a className="text-accent underline underline-offset-4" href={project.liveUrl} target="_blank" rel="noreferrer">
+          <a
+            className="text-accent underline underline-offset-4"
+            href={project.liveUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
             Live
           </a>
         ) : null}
         {project.repoUrl ? (
-          <a className="text-accent underline underline-offset-4" href={project.repoUrl} target="_blank" rel="noreferrer">
+          <a
+            className="text-accent underline underline-offset-4"
+            href={project.repoUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
             Source
           </a>
         ) : null}
@@ -37,4 +47,3 @@ export function ProjectCard({ project }: { project: CollectionListItem }) {
     </div>
   );
 }
-

@@ -33,8 +33,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${inter.variable} ${ibmPlexMono.variable} antialiased`}>
         <ThemeProvider>
           <div className="min-h-dvh">
+            <a
+              href="#main-content"
+              className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-foreground focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-background"
+            >
+              Skip to content
+            </a>
             <SiteHeader />
-            <main className="mx-auto w-full max-w-5xl px-4 py-10">{children}</main>
+            <main id="main-content" className="mx-auto w-full max-w-5xl px-4 py-10">
+              {children}
+            </main>
             <SiteFooter />
           </div>
         </ThemeProvider>
@@ -42,4 +50,3 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
-

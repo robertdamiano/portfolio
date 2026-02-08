@@ -22,4 +22,3 @@ export function getAdminDb() {
   getAdminApp();
   return getFirestore();
 }
-
