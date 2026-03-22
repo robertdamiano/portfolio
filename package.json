@@ -9,7 +9,8 @@
     "lint": "eslint",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "firebase:deploy": "firebase deploy"
+    "firebase:deploy": "firebase deploy",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "firebase-admin": "^13.5.0",
@@ -31,7 +32,8 @@
     "eslint": "^9",
     "eslint-config-next": "^15.5.7",
     "eslint-config-prettier": "^10.1.8",
-    "firebase-tools": "^14.17.0",
+    "firebase-tools": "14.27.0",
+    "patch-package": "^8.0.1",
     "prettier": "^3.8.1",
     "tailwindcss": "^4",
     "typescript": "^5"
