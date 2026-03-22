@@ -36,18 +36,20 @@ Personal portfolio site at `robertdamiano-dev.web.app`.
 
 Deploys run automatically on pushes to `main` via `.github/workflows/deploy.yml`.
 
-1. Create a Firebase service account key with permissions to deploy Hosting.
+1. Create a Firebase/GCP service account key with permission to deploy Hosting and update the SSR framework backend (Cloud Run–related roles are often required in addition to Hosting; expand IAM if deploy logs show permission errors).
 2. In GitHub repo settings, add secret `GOOGLE_APPLICATION_CREDENTIALS` with the full JSON key.
-3. Push to `main`; workflow will run `npm ci`, `npm run lint`, `npm run build`, then:
+3. Push to `main`; workflow will run `npm ci`, `npm run lint`, `npm run build`, then enable the web frameworks experiment and deploy:
    ```bash
-   npx firebase deploy --only hosting --project robertdamiano-dev
+   npx firebase experiments:enable webframeworks
+   npx firebase deploy --only hosting --project robertdamiano-dev --force
    ```
 
 If CI deploy fails and you need local recovery:
 
 ```bash
 npx firebase login --reauth
-npx firebase deploy --only hosting --project robertdamiano-dev
+npx firebase experiments:enable webframeworks
+npx firebase deploy --only hosting --project robertdamiano-dev --force
 ```
 
 ## Adding content
@@ -71,7 +73,7 @@ content/
 title: My Post Title # required
 summary: A short description # optional, shown in lists and meta tags
 date: "2026-01-15" # optional, used for sorting blog posts
-featured: true # optional, pins projects to the homepage
+featured: true # optional; featured projects sort first on /projects; up to two appear on the homepage
 liveUrl: https://example.com # optional, "Live" link on project pages
 repoUrl: https://github.com/… # optional, "Source" link on project pages
 ---
@@ -81,7 +83,7 @@ Your markdown/MDX content here.
 
 ### Images
 
-Place images in `public/images/` and reference them in MDX as `![alt text](/images/filename.png)`. Images are automatically optimized via `next/image`.
+Place images in `public/images/` and reference them in MDX as `![alt text](/images/filename.png)`. Local paths under `public/` go through `next/image` with optimization. Remote image URLs (`http`/`https` in MDX) use the same component but are loaded unoptimized.
 
 ### Formatting
 
