@@ -9,7 +9,7 @@ export default async function HomePage() {
 
   return (
     <div className="space-y-14">
-      <section className="space-y-5">
+      <section className="animate-enter stagger-1 space-y-5">
         <div className="space-y-3">
           <h1 className="font-mono text-4xl font-semibold tracking-tight">Senior Platform Engineer</h1>
           <p className="text-balance text-xl text-muted">
@@ -28,7 +28,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="space-y-4">
+      <section className="animate-enter stagger-2 space-y-4">
         <h2 className="font-mono text-xl font-semibold">Experience (highlights)</h2>
         <ul className="space-y-2 text-sm text-muted">
           <li>Senior Platform Engineer — building AWS-first IaC and Kubernetes platforms for product teams.</li>
@@ -43,7 +43,7 @@ export default async function HomePage() {
         </ul>
       </section>
 
-      <section className="space-y-5">
+      <section className="animate-enter stagger-3 space-y-5">
         <div className="flex items-baseline justify-between gap-4">
           <h2 className="font-mono text-xl font-semibold">Featured projects</h2>
           <Link href="/projects" className="text-sm text-accent underline underline-offset-4">
@@ -58,7 +58,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="space-y-4">
+      <section className="animate-enter stagger-4 space-y-4">
         <h2 className="font-mono text-xl font-semibold">Core focus</h2>
         <div className="grid gap-3 md:grid-cols-3">
           <div className="rounded-lg border border-border bg-card p-4">
